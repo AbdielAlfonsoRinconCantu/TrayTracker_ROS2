@@ -1,0 +1,7 @@
+# Ignore ROS2 stuff
+install/
+log/
+build/
+
+# VSC stuff
+.vscode
