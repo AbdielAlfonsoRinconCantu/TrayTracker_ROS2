@@ -8,6 +8,12 @@ A ROS2 system for tracking and counting objects processed as arrays.
 ## Overview
 ![rosgraph.png](rosgraph.png)
 
+/coordinates_pennies [std_msgs/msg/Int32MultiArray]
+/count_penny_image [sensor_msgs/msg/Image]
+/image [sensor_msgs/msg/Image]
+/penny_grid [std_msgs/msg/UInt8MultiArray]
+/track_tray_image [sensor_msgs/msg/Image]
+
 <br>
 
 ## Executables
