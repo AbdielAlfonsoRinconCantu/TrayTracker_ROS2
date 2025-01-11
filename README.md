@@ -5,14 +5,26 @@ A ROS2 system for tracking and counting objects processed as arrays.
   <img src="TrayTracker_ROS2_GIF.gif" alt="TrayTracker_ROS2_GIF">
 </div>
 
-## Overview
-![rosgraph.png](rosgraph.png)
+## Table of Contents
 
-/coordinates_pennies [std_msgs/msg/Int32MultiArray]
-/count_penny_image [sensor_msgs/msg/Image]
-/image [sensor_msgs/msg/Image]
-/penny_grid [std_msgs/msg/UInt8MultiArray]
+1. [Overview](#overview)  
+2. [Executables](#executables)  
+3. [Installation](#installation)  
+4. [Usage](#usage)  
+5. [Acknowledgments](#acknowledgments)  
+
+## Overview
+![rosgraph2.png](rosgraph2.png)
+
+- **Topics:**  
+/coordinates_pennies [std_msgs/msg/Int32MultiArray]  
+/count_penny_image [sensor_msgs/msg/Image]  
+/image [sensor_msgs/msg/Image]  
+/penny_grid [std_msgs/msg/UInt8MultiArray]  
 /track_tray_image [sensor_msgs/msg/Image]
+
+- **Nodes:**  
+
 
 <br>
 
@@ -47,6 +59,9 @@ A ROS2 system for tracking and counting objects processed as arrays.
 - **track_tray_image_web:** subscribes to `/track_tray_image` and streams its video as a webserver host.
 
 <br>
+
+**ROS2_xovobobo_RTSP**  
+- Do not use `ros2 run` with image2rtsp executables, follow instructions on the *Usage* section.
 
 ## Installation
 Make sure the following is installed:
