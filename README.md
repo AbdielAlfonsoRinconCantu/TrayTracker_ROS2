@@ -16,7 +16,7 @@ A ROS2 system for tracking and counting objects processed as arrays.
 5. [Acknowledgments](#acknowledgments)  
 
 ## Overview
-- **rqt_graph:**
+- **ROS graph:**
   
 ![rosgraph2.png](rosgraph2.png)
 
