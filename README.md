@@ -5,6 +5,8 @@ A ROS2 system for tracking and counting objects processed as arrays.
   <img src="TrayTracker_ROS2_GIF.gif" alt="TrayTracker_ROS2_GIF">
 </div>
 
+<br>
+
 ## Table of Contents
 
 1. [Overview](#overview)  
@@ -14,17 +16,94 @@ A ROS2 system for tracking and counting objects processed as arrays.
 5. [Acknowledgments](#acknowledgments)  
 
 ## Overview
+- **rqt_graph:**
+  
 ![rosgraph2.png](rosgraph2.png)
 
-- **Topics:**  
-/coordinates_pennies [std_msgs/msg/Int32MultiArray]  
-/count_penny_image [sensor_msgs/msg/Image]  
-/image [sensor_msgs/msg/Image]  
-/penny_grid [std_msgs/msg/UInt8MultiArray]  
-/track_tray_image [sensor_msgs/msg/Image]
+<br>
 
+- **Topics:**
+```bash
+/coordinates_pennies
+Type: std_msgs/msg/Int32MultiArray
+Publisher count: 1
+Subscription count: 1
+
+/count_penny_image
+Type: sensor_msgs/msg/Image
+Publisher count: 1
+Subscription count: 3
+
+/image
+Type: sensor_msgs/msg/Image
+Publisher count: 1
+Subscription count: 5
+
+/penny_grid
+Type: std_msgs/msg/UInt8MultiArray
+Publisher count: 1
+Subscription count: 1
+
+/track_tray_image
+Type: sensor_msgs/msg/Image
+Publisher count: 1
+Subscription count: 3
+```
+
+<br>
+  
 - **Nodes:**  
+```bash
+/count_penny_image_web
+  Subscribers:
+    /count_penny_image: sensor_msgs/msg/Image
 
+/image2rtsp
+  Subscribers:
+    /image: sensor_msgs/msg/Image
+ 
+/image_publisher
+  Publishers:
+    /image: sensor_msgs/msg/Image
+
+/image_subsciber
+  Subscribers:
+    /image: sensor_msgs/msg/Image
+
+/image_web
+  Subscribers:
+    /image: sensor_msgs/msg/Image
+ 
+/penny_grid_OPCUA_server
+  Subscribers:
+    /penny_grid: std_msgs/msg/UInt8MultiArray
+ 
+/penny_image_subsciber
+  Subscribers:
+    /count_penny_image: sensor_msgs/msg/Image
+ 
+/penny_tray_constructor
+  Subscribers:
+    /coordinates_pennies: std_msgs/msg/Int32MultiArray
+  Publishers:
+    /penny_grid: std_msgs/msg/UInt8MultiArray
+ 
+/track_tray_image_web
+  Subscribers:
+    /track_tray_image: sensor_msgs/msg/Image
+  
+/tray_image_subsciber
+  Subscribers:
+    /track_tray_image: sensor_msgs/msg/Image
+ 
+/tray_tracker
+  Subscribers:
+    /image: sensor_msgs/msg/Image
+  Publishers:
+    /coordinates_pennies: std_msgs/msg/Int32MultiArray
+    /count_penny_image: sensor_msgs/msg/Image
+    /track_tray_image: sensor_msgs/msg/Image
+```
 
 <br>
 
@@ -61,7 +140,9 @@ A ROS2 system for tracking and counting objects processed as arrays.
 <br>
 
 **ROS2_xovobobo_RTSP**  
-- Do not use `ros2 run` with image2rtsp executables, follow instructions on the *Usage* section.
+- Do not use `ros2 run` with image2rtsp executables, follow instructions in the *Usage* section.
+
+<br>
 
 ## Installation
 Make sure the following is installed:
@@ -155,6 +236,8 @@ $ cd ~/TrayTracker_ROS2/ROS2_xovobobo_RTSP/ros2_ws
 $ source /opt/ros/jazzy/setup.bash
 $ colcon build --cmake-clean-cache
 ```
+
+<br>
 
 ## Usage 
 
