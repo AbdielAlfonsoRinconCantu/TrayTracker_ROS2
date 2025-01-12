@@ -34,7 +34,7 @@ def on_image(msg):
 
 # Initializing the node
 rclpy.init(args=None)
-node = rclpy.create_node('Show_image_python')
+node = rclpy.create_node('/count_penny_image_web')
 
 Thread(target=lambda:node).start() # Starting the Thread with a target in the node
 
