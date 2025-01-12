@@ -34,11 +34,11 @@ def on_image(msg):
 
 # Initializing the node
 rclpy.init(args=None)
-node = rclpy.create_node('Show_image_python')
+node = rclpy.create_node('/image_web')
 
 Thread(target=lambda:node).start() # Starting the Thread with a target in the node
 
-subscription = node.create_subscription(Image,"/image_web", on_image, 10) # Creating the Subscribe node
+subscription = node.create_subscription(Image,"/image", on_image, 10) # Creating the Subscribe node
 
 app = Flask(__name__) # Initializing the Flask application
 
